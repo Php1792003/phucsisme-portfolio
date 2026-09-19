@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pham Hoang Phuc | Software Developer</title>
+    <meta name="description"
+        content="Pham Hoang Phuc – Software Developer at FPT Software. Building banking systems, LiDAR data pipelines for autonomous vehicles, and SaaS platforms for building security management.">
+    <meta name="keywords"
+        content="Pham Hoang Phuc, Software Developer, Full-stack, Node.js, NestJS, ReactJS, AWS, Docker, FPT Software, Da Nang">
+    <meta name="author" content="Pham Hoang Phuc">
+    <meta property="og:title" content="Pham Hoang Phuc | Software Developer">
+    <meta property="og:description" content="Full-stack developer: banking systems, AI data, building management SaaS.">
+    <meta property="og:type" content="website">
+
+    <script>
+        // Chạy sớm: bật chế độ JS + áp dụng theme đã lưu để tránh nháy màu
+        document.documentElement.classList.add('js');
+        try {
+            var t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+            else if (window.matchMedia('(prefers-color-scheme: light)').matches)
+                document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading">
+
+    <!-- Chim Lạc tangram (dùng lại cho logo) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="bird" viewBox="0 0 50 40">
+            <polygon points="5,11 13,14 12,16" fill="var(--bronze)" />
+            <polygon points="12,12 18,12 18,19 12,19" fill="var(--jade)" opacity="0.9" />
+            <polygon points="18,15 24,18 24,24 18,21" fill="var(--jade-deep)" />
+            <polygon points="24,16 24,26 23,26 23,16" fill="var(--jade)" opacity="0.7" />
+            <polygon points="24,16 38,9 36,15" fill="var(--bronze)" opacity="0.85" />
+            <polygon points="24,19 40,14 38,20" fill="var(--jade)" opacity="0.8" />
+            <polygon points="24,24 36,26 34,30" fill="var(--jade-deep)" opacity="0.8" />
+            <polygon points="20,26 22,26 22,34 20,34" fill="var(--jade)" opacity="0.8" />
+            <polygon points="18,34 24,34 21,38" fill="var(--bronze)" opacity="0.8" />
+        </symbol>
+    </svg>
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="pl-panel pl-top"></div>
+        <div class="pl-panel pl-bot"></div>
+        <div class="pl-center">
+            <div class="pl-visual">
+                <div class="pl-glow"></div>
+                <svg class="pl-svg" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="plGradJade" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#2fbf8f" stop-opacity="0.15"/>
+                            <stop offset="60%" stop-color="#2fbf8f" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#d9a441" stop-opacity="1"/>
+                        </linearGradient>
+                        <linearGradient id="plGradBronze" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#d9a441" stop-opacity="0.15"/>
+                            <stop offset="60%" stop-color="#d9a441" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#2fbf8f" stop-opacity="1"/>
+                        </linearGradient>
+                        <filter id="plGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Tech Radar Guides -->
+                    <circle class="pl-track-outer" cx="90" cy="90" r="76" stroke="rgba(47, 191, 143, 0.15)" stroke-width="1" stroke-dasharray="3 5"/>
+                    <circle class="pl-track-inner" cx="90" cy="90" r="48" stroke="rgba(217, 164, 65, 0.12)" stroke-width="1"/>
+
+                    <!-- Orbit 1 with animated path & orb -->
+                    <g transform="rotate(-28 90 90)">
+                        <path id="plOrbit1" class="pl-orbit pl-orbit-1" d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none" stroke="url(#plGradJade)" stroke-width="2" stroke-linecap="round"/>
+                        <g id="plOrb1" class="pl-orb" filter="url(#plGlow)">
+                            <circle cx="0" cy="0" r="4.5" fill="#2fbf8f"/>
+                            <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+                        </g>
+                    </g>
+
+                    <!-- Orbit 2 with animated path & orb -->
+                    <g transform="rotate(38 90 90)">
+                        <path id="plOrbit2" class="pl-orbit pl-orbit-2" d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none" stroke="url(#plGradBronze)" stroke-width="2" stroke-linecap="round"/>
+                        <g id="plOrb2" class="pl-orb" filter="url(#plGlow)">
+                            <circle cx="0" cy="0" r="4" fill="#d9a441"/>
+                            <circle cx="0" cy="0" r="1.8" fill="#ffffff"/>
+                        </g>
+                    </g>
+
+                    <!-- Center Emblem: Hex Shield with < P > -->
+                    <g class="pl-core" id="plCore" filter="url(#plGlow)">
+                        <polygon points="90,64 114,78 114,102 90,116 66,102 66,78" fill="rgba(6, 32, 22, 0.88)" stroke="var(--jade)" stroke-width="1.6"/>
+                        <!-- < P > Symbol -->
+                        <path d="M 77 86 L 73 90 L 77 94" stroke="var(--jade)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 86 96 L 86 84 L 92 84 C 95 84 96 86 96 88 C 96 90 95 92 92 92 L 86 92" stroke="var(--bronze)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M 103 86 L 107 90 L 103 94" stroke="var(--jade)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="pl-meta">
+                <div class="pl-status-wrap">
+                    <span class="pl-dot-pulse"></span>
+                    <span id="plStatus" class="pl-status">INITIALIZING SYSTEM...</span>
+                </div>
+                <div class="pl-count"><span id="plNum">0</span><span class="pl-pct">%</span></div>
+            </div>
+
+            <div class="pl-bar-wrap">
+                <div class="pl-bar"><i id="plBar"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Con trỏ tuỳ chỉnh (chỉ hiện trên thiết bị có chuột) -->
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-pill">
+            <a href="#hero" class="nav-logo" id="navLogo" aria-label="Back to top">
+                <svg class="nav-bird" viewBox="0 0 50 40" aria-hidden="true">
+                    <use href="#bird" />
+                </svg>
+                <span>Phúc.</span>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links" id="dock">
+                    <li><a href="#about" class="nav-link" aria-label="About"><i class="ri-user-line"></i><span
+                                class="dock-label">About</span></a></li>
+                    <li><a href="#experience" class="nav-link" aria-label="Experience"><i
+                                class="ri-briefcase-line"></i><span class="dock-label">Experience</span></a></li>
+                    <li><a href="#projects" class="nav-link" aria-label="Projects"><i
+                                class="ri-layout-masonry-line"></i><span class="dock-label">Projects</span></a></li>
+                    <li><a href="#skills" class="nav-link" aria-label="Skills"><i
+                                class="ri-terminal-window-line"></i><span class="dock-label">Skills</span></a></li>
+                    <li><a href="#education" class="nav-link" aria-label="Education"><i
+                                class="ri-graduation-cap-line"></i><span class="dock-label">Education</span></a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle light/dark theme"><i
+                        class="ri-moon-line"></i></button>
+                <a href="index.html" class="lang-btn magnetic" aria-label="Chuyển sang Tiếng Việt">VI</a>
+                <a href="#contact" class="btn btn-sm btn-primary nav-cta magnetic"><span>Contact</span></a>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <main id="mainContent">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-glow g1"></div>
+                <div class="hero-glow g2"></div>
+                <div class="hero-grid"></div>
+            </div>
+
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-h><span class="badge-dot"></span>Open to new opportunities</div>
+
+                    <h1 class="hero-title">
+                        <span class="hero-hello" data-h>Hello, I am</span>
+                        <span class="hero-name" data-split>Pham Hoang</span>
+                        <span class="hero-name is-accent" data-split>Phuc</span>
+                    </h1>
+
+                    <div class="hero-role" data-h>
+                        <span class="role-prefix">&gt;_</span>
+                        <span class="role-mask"><span id="roleText">Software Developer</span></span>
+                    </div>
+
+                    <p class="hero-desc" data-h>
+                        Software Developer at <strong>FPT Software</strong>. I build robust systems for real-world
+                        environments: Japanese-standard banking platforms, LiDAR data for Toyota autonomous vehicles,
+                        and a building security SaaS that I designed and deployed.
+                    </p>
+
+                    <div class="hero-cta" data-h>
+                        <a href="#projects" class="btn btn-primary magnetic"><span>View projects</span><i
+                                class="ri-arrow-down-line"></i></a>
+                        <a href="#contact" class="btn btn-outline magnetic"><span>Let's talk</span></a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" id="heroVisual">
+                    <div class="hv-stage">
+                        <!-- Dong Son drum pattern -->
+                        <svg class="drum" viewBox="0 0 400 400" data-depth="10" aria-hidden="true">
+                            <circle class="drum-ring" cx="200" cy="200" r="164" />
+                            <circle class="drum-ring dashed" cx="200" cy="200" r="130" />
+                            <circle class="drum-ring" cx="200" cy="200" r="118" />
+                            <g id="drumRays" class="drum-rays"></g>
+                            <g id="drumRays2" class="drum-rays inner"></g>
+                        </svg>
+                        <div class="mp mp-1" data-depth="26"></div>
+                        <div class="mp mp-2" data-depth="34"></div>
+                        <div class="mp mp-3" data-depth="22"></div>
+                        <div class="mp mp-4" data-depth="30"></div>
+                        <div class="profile-img-wrap" data-depth="-14">
+                            <img src="img/phucsisme.png" alt="Pham Hoang Phuc portrait" class="profile-img"
+                                onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'profile-placeholder\'>PH</div>';">
+                        </div>
+                        <div class="profile-status"><span class="status-dot"></span>Da Nang, Vietnam</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint" aria-hidden="true">
+                <div class="scroll-line"><i></i></div>
+                <span>Scroll down</span>
+            </div>
+        </section>
+
+        <!-- ==================== MARQUEE ==================== -->
+        <section class="marquee" aria-label="Technologies used">
+            <div class="marquee-row" data-dir="1">
+                <div class="marquee-track">
+                    <span>Node.js</span><span>NestJS</span><span>ReactJS</span><span>React
+                        Native</span><span>PostgreSQL</span><span>Prisma</span><span>AWS
+                        EC2</span><span>Docker</span><span>Nginx</span><span>Linux</span><span>TailwindCSS</span><span>SQL
+                        Server</span>
+                </div>
+            </div>
+            <div class="marquee-row alt" data-dir="-1">
+                <div class="marquee-track">
+                    <span>Multi-tenant SaaS</span><span>RESTful API</span><span>Hotfix &amp; Patch</span><span>Point
+                        Cloud</span><span>SQL Optimization</span><span>Basic CI/CD</span><span>Building
+                        Operations</span><span>Fire Safety</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="sec-head">
+                    <h2 class="sec-title" data-split>About Me</h2>
+                </div>
+
+                <p class="about-lead" id="aboutLead">I design and build software that performs well in the real world,
+                    from banking and AI data to building operations management.</p>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p data-reveal>I am <strong>Pham Hoang Phuc</strong>, a Software Developer at <strong>FPT
+                                Software</strong>, and an Information Technology graduate from the University of
+                            Information Technology, VNU-HCM (UIT). I am currently developing the Eposnet banking system
+                            according to Japanese standards and reviewing LiDAR data quality for Toyota's autonomous
+                            vehicle project.</p>
+                        <p data-reveal>I work across the entire product lifecycle: Backend (Node.js, NestJS), Frontend
+                            (ReactJS, React Native), and Cloud deployment (AWS, Docker, Nginx).</p>
+                        <p data-reveal>My experience in Operations Management at The Ori Garden building gives me
+                            practical insight into operations, security, and fire safety—perspectives I bring directly
+                            into my software design.</p>
+                    </div>
+
+                    <dl class="facts" data-reveal>
+                        <div data-spot>
+                            <dt>Location</dt>
+                            <dd>Da Nang, Vietnam</dd>
+                        </div>
+                        <div data-spot>
+                            <dt>Current</dt>
+                            <dd>Software Developer &amp; Data Reviewer, FPT Software</dd>
+                        </div>
+                        <div data-spot>
+                            <dt>Education</dt>
+                            <dd>Information Technology, UIT – VNU-HCM</dd>
+                        </div>
+                        <div data-spot>
+                            <dt>Strengths</dt>
+                            <dd>Full-stack, Cloud &amp; DevOps, Operations knowledge</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="stats" id="stats">
+                    <div class="stat" data-reveal>
+                        <div class="stat-num"><span data-count="2">0</span>+</div>
+                        <div class="stat-label">years of working experience</div>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <div class="stat-num"><span data-count="3">0</span></div>
+                        <div class="stat-label">industries involved: fintech, AI data, building management</div>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <div class="stat-num"><span data-count="1">0</span></div>
+                        <div class="stat-label">SaaS product designed and operated (AEGISM)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE ==================== -->
+        <section class="section section-alt" id="experience">
+            <div class="container">
+                <div class="sec-head">
+                    <h2 class="sec-title" data-split>Work Experience</h2>
+                    <p class="sec-sub" data-reveal>From field operations to software development for large-scale
+                        systems.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="tl-rail" aria-hidden="true"><i class="tl-progress"></i></div>
+
+                    <!-- FPT Software -->
+                    <article class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card" data-spot style="--img:url('img/fpt_software.jpg')">
+                            <header class="tl-company">
+                                <h3>FPT Software</h3>
+                                <span class="tl-date">08/2025 – Present</span>
+                            </header>
+
+                            <section class="role">
+                                <h4 class="role-title">Software Developer &amp; Data Reviewer</h4>
+                                <p class="role-project"><i class="fas fa-building-columns"></i> Eposnet Banking System
+                                    (Japanese Standard)</p>
+                                <ul class="role-list">
+                                    <li>Developing features, analyzing root causes, and resolving bugs for the banking
+                                        web system, meeting the strict quality standards of Japanese partners.</li>
+                                    <li>Collaborating with QA and Tech Leads to reproduce bugs, deploy hotfixes/patches,
+                                        and conduct regression testing to ensure core business flows are not disrupted.
+                                    </li>
+                                </ul>
+                                <div class="tags">
+                                    <span>Banking System</span><span>Hotfix / Patch</span><span>Regression
+                                        Testing</span><span>Japan Standard</span>
+                                </div>
+                            </section>
+
+                            <section class="role">
+                                <h4 class="role-title">LiDAR Point Cloud Annotation Reviewer <em>2025</em></h4>
+                                <p class="role-project"><i class="fas fa-car-side"></i> TTDC Project, Toyota Autonomous
+                                    Vehicles</p>
+                                <ul class="role-list">
+                                    <li>Reviewing and calibrating annotations on LiDAR point cloud data for 3D objects
+                                        like vehicles, pedestrians, and trees.</li>
+                                    <li>Coordinating with the AI team to improve input data quality for autonomous
+                                        driving algorithms.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span>LiDAR</span><span>Point Cloud</span><span>3D Annotation</span><span>Autonomous
+                                        Driving</span>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- The Ori Garden -->
+                    <article class="tl-item">
+                        <div class="tl-dot"></div>
+                        <div class="tl-card" data-spot style="--img:url('img/the_ori.jpg')">
+                            <header class="tl-company">
+                                <h3>Tòa nhà The Ori Garden</h3>
+                                <span class="tl-date">04/2024 – 04/2025</span>
+                            </header>
+
+                            <section class="role">
+                                <h4 class="role-title">Operations Management</h4>
+                                <ul class="role-list">
+                                    <li>Coordinating soft services of the building, ensuring service quality and living
+                                        experience for residents.</li>
+                                    <li>Receiving, tracking, and completely resolving incidents and feedback from
+                                        residents in daily life.</li>
+                                    <li>Mastering Fire Prevention and Fighting (FPF) procedures, ensuring safety for the
+                                        entire building.</li>
+                                    <li>Supervising subcontractors (cleaning, security, maintenance) to maintain
+                                        operational standards.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span>Service Management</span><span>Resident Support</span><span>Fire
+                                        Safety</span><span>Contractor Supervision</span>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS ==================== -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="sec-head">
+                    <h2 class="sec-title" data-split>Featured Projects</h2>
+                    <p class="sec-sub" data-reveal>Products I designed, built, and deployed into production.</p>
+                </div>
+
+                <div class="proj-stack">
+                    <!-- AEGISM -->
+                    <article class="proj" data-spot>
+                        <div class="proj-info">
+                            <span class="proj-kind">SaaS Product · In Operation</span>
+                            <h3 class="proj-title">AEGISM</h3>
+                            <p class="proj-desc">A multi-tenant SaaS platform for building security management, born
+                                from real operational experience. I handled the entire product lifecycle: system design,
+                                full-stack development, DevOps, and deployment.</p>
+                            <div class="tags">
+                                <span>Multi-tenant SaaS</span><span>Full-stack</span><span>DevOps</span><span>Production
+                                    deployment</span>
+                            </div>
+                            <a class="proj-link magnetic" href="https://aegism.online" target="_blank"
+                                rel="noopener"><span>Visit aegism.online</span><i
+                                    class="ri-arrow-up-line-right-from-square"></i></a>
+                        </div>
+                        <div class="proj-visual" data-tilt aria-hidden="true">
+                            <div class="radar">
+                                <i class="radar-ring r1"></i><i class="radar-ring r2"></i><i class="radar-ring r3"></i>
+                                <i class="radar-cross h"></i><i class="radar-cross v"></i>
+                                <div class="radar-sweep"></div>
+                                <b class="blip b1"></b><b class="blip b2"></b><b class="blip b3"></b><b
+                                    class="blip b4"></b>
+                                <div class="radar-core"><i class="ri-shield-check-line"></i></div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section class="section section-alt" id="skills">
+            <div class="container">
+                <div class="sec-head">
+                    <h2 class="sec-title" data-split>Professional Skills</h2>
+                    <p class="sec-sub" data-reveal>Technologies I use daily, grouped by their role in a system.</p>
+                </div>
+
+                <div class="skill-list">
+                    <div class="skill-row">
+                        <h3><i class="ri-server-line"></i>Backend</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>NestJS</li>
+                            <li>Express</li>
+                            <li>Prisma ORM</li>
+                            <li>RESTful API</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row">
+                        <h3><i class="ri-stack-line"></i>Frontend &amp; Mobile</h3>
+                        <ul>
+                            <li>ReactJS</li>
+                            <li>React Native / Expo</li>
+                            <li>TailwindCSS</li>
+                            <li>HTML / CSS / JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row">
+                        <h3><i class="ri-database-2-line"></i>Databases</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>SQL Server</li>
+                            <li>SQL Query Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row">
+                        <h3><i class="ri-cloud-line"></i>Cloud &amp; DevOps</h3>
+                        <ul>
+                            <li>AWS (EC2)</li>
+                            <li>Linux / Ubuntu</li>
+                            <li>Docker</li>
+                            <li>Nginx</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row">
+                        <h3><i class="ri-box-3-line"></i>Data &amp; Tools</h3>
+                        <ul>
+                            <li>LiDAR Point Cloud Annotation</li>
+                            <li>Photoshop</li>
+                            <li>Canva</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row">
+                        <h3><i class="fas fa-people-group"></i>Kỹ năng mềm</h3>
+                        <ul>
+                            <li>Giao tiếp</li>
+                            <li>Làm việc nhóm</li>
+                            <li>Fast adaptability</li>
+                            <li>Time management</li>
+                            <li>Independent work</li>
+                            <li>Logical thinking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EDUCATION ==================== -->
+        <section class="section" id="education">
+            <div class="container">
+                <div class="sec-head">
+                    <h2 class="sec-title" data-split>Education &amp; Certificates</h2>
+                </div>
+
+                <div class="edu-list">
+                    <article class="edu" data-spot>
+                        <span class="edu-year">Graduated</span>
+                        <div>
+                            <h3>Information Technology</h3>
+                            <p>University of Information Technology – VNU-HCM (UIT)</p>
+                        </div>
+                    </article>
+                    <article class="edu" data-spot>
+                        <span class="edu-year">2024</span>
+                        <div>
+                            <h3>Building Management &amp; Operations</h3>
+                            <p>Institute of Management and Finance</p>
+                        </div>
+                    </article>
+                    <article class="edu" data-spot>
+                        <span class="edu-year">2024</span>
+                        <div>
+                            <h3>Academic Preparatory English Level 3</h3>
+                            <p>Top Notch 2</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="section section-alt contact" id="contact">
+            <div class="container">
+                <h2 class="contact-title" data-split>Let's build something lasting.</h2>
+                <p class="contact-sub" data-reveal>I am open to discussing Software Developer roles, freelance projects,
+                    or just having a chat about tech.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-links" data-reveal>
+                        <a class="mail-big magnetic" href="mailto:[psaigon179@gmail.com]" id="mailBig">
+                            <span>psaigon179@gmail.com</span>
+                        </a>
+                        <button class="btn btn-outline btn-sm" id="copyMail" type="button"><i
+                                class="ri-file-copy-line"></i><span>Copy Email</span></button>
+
+                        <ul class="c-list">
+                            <li><a href="tel:0905441263"><i class="ri-phone-line"></i>0905 441 263</a></li>
+                            <li><a href="https://www.facebook.com/phucsisme" target="_blank" rel="noopener"><i
+                                        class="ri-facebook-fill"></i>facebook.com/phucsisme</a></li>
+                        </ul>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" data-reveal>
+                        <div class="form-group"><label for="name">Full Name</label><input type="text" id="name"
+                                placeholder="John Doe" required autocomplete="name"></div>
+                        <div class="form-group"><label for="email">Email</label><input type="email" id="email"
+                                placeholder="email@company.com" required autocomplete="email"></div>
+                        <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject"
+                                placeholder="E.g. Backend Job Opportunity"></div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" rows="5"
+                                placeholder="What problem do you need to solve?" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full magnetic"><span>Send via Email</span><i
+                                class="ri-send-plane-fill"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-big" data-split>Pham Hoang Phuc</div>
+            <div class="foot-row">
+                <p>&copy; 2026 Pham Hoang Phuc. Designed and coded by me.</p>
+                <nav class="foot-nav" aria-label="Footer links">
+                    <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a
+                        href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
