@@ -214,8 +214,15 @@ button {
 }
 
 @keyframes plPulseGlow {
-    0% { transform: scale(0.85); opacity: 0.6; }
-    100% { transform: scale(1.15); opacity: 1; }
+    0% {
+        transform: scale(0.85);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
 }
 
 .pl-svg {
@@ -264,8 +271,17 @@ button {
 }
 
 @keyframes plDotBlink {
-    0%, 100% { opacity: 0.4; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
 .pl-status {
@@ -756,6 +772,20 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    z-index: 0;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('img/intro_bg_pc.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    /* Làm mờ nhẹ hơn */
+    z-index: -1;
 }
 
 .hero-glow {
@@ -1581,7 +1611,8 @@ button {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--jade);
+    background: var(--card);
+    border: 1px solid var(--line-strong);
     color: var(--jade-ink);
     font-size: 1.1rem;
 }
@@ -1965,6 +1996,10 @@ button {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
+    .hero-bg::before {
+        background-image: url('img/intro_bg.png');
+    }
+
     .hero {
         padding-top: 130px;
     }
@@ -2036,6 +2071,9 @@ button {
 }
 
 @media (max-width: 640px) {
+    .hero-bg::before {
+        background-image: url('img/intro_bg_smp.png');
+    }
 
     .container,
     .hero-container {
@@ -2099,7 +2137,7 @@ button {
 /* ---------- Trail Cursor Text ---------- */
 .trail-char {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     pointer-events: none;
     font-family: var(--font-mono);

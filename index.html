@@ -62,53 +62,64 @@
                 <svg class="pl-svg" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="plGradJade" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#2fbf8f" stop-opacity="0.15"/>
-                            <stop offset="60%" stop-color="#2fbf8f" stop-opacity="0.9"/>
-                            <stop offset="100%" stop-color="#d9a441" stop-opacity="1"/>
+                            <stop offset="0%" stop-color="#2fbf8f" stop-opacity="0.15" />
+                            <stop offset="60%" stop-color="#2fbf8f" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#d9a441" stop-opacity="1" />
                         </linearGradient>
                         <linearGradient id="plGradBronze" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#d9a441" stop-opacity="0.15"/>
-                            <stop offset="60%" stop-color="#d9a441" stop-opacity="0.9"/>
-                            <stop offset="100%" stop-color="#2fbf8f" stop-opacity="1"/>
+                            <stop offset="0%" stop-color="#d9a441" stop-opacity="0.15" />
+                            <stop offset="60%" stop-color="#d9a441" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#2fbf8f" stop-opacity="1" />
                         </linearGradient>
                         <filter id="plGlow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feGaussianBlur stdDeviation="3" result="blur" />
                             <feMerge>
-                                <feMergeNode in="blur"/>
-                                <feMergeNode in="SourceGraphic"/>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
                             </feMerge>
                         </filter>
                     </defs>
 
                     <!-- Tech Radar Guides -->
-                    <circle class="pl-track-outer" cx="90" cy="90" r="76" stroke="rgba(47, 191, 143, 0.15)" stroke-width="1" stroke-dasharray="3 5"/>
-                    <circle class="pl-track-inner" cx="90" cy="90" r="48" stroke="rgba(217, 164, 65, 0.12)" stroke-width="1"/>
+                    <circle class="pl-track-outer" cx="90" cy="90" r="76" stroke="rgba(47, 191, 143, 0.15)"
+                        stroke-width="1" stroke-dasharray="3 5" />
+                    <circle class="pl-track-inner" cx="90" cy="90" r="48" stroke="rgba(217, 164, 65, 0.12)"
+                        stroke-width="1" />
 
                     <!-- Orbit 1 with animated path & orb -->
                     <g transform="rotate(-28 90 90)">
-                        <path id="plOrbit1" class="pl-orbit pl-orbit-1" d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none" stroke="url(#plGradJade)" stroke-width="2" stroke-linecap="round"/>
+                        <path id="plOrbit1" class="pl-orbit pl-orbit-1"
+                            d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none" stroke="url(#plGradJade)"
+                            stroke-width="2" stroke-linecap="round" />
                         <g id="plOrb1" class="pl-orb" filter="url(#plGlow)">
-                            <circle cx="0" cy="0" r="4.5" fill="#2fbf8f"/>
-                            <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+                            <circle cx="0" cy="0" r="4.5" fill="#2fbf8f" />
+                            <circle cx="0" cy="0" r="2" fill="#ffffff" />
                         </g>
                     </g>
 
                     <!-- Orbit 2 with animated path & orb -->
                     <g transform="rotate(38 90 90)">
-                        <path id="plOrbit2" class="pl-orbit pl-orbit-2" d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none" stroke="url(#plGradBronze)" stroke-width="2" stroke-linecap="round"/>
+                        <path id="plOrbit2" class="pl-orbit pl-orbit-2"
+                            d="M 20 90 A 70 26 0 1 0 160 90 A 70 26 0 1 0 20 90 Z" fill="none"
+                            stroke="url(#plGradBronze)" stroke-width="2" stroke-linecap="round" />
                         <g id="plOrb2" class="pl-orb" filter="url(#plGlow)">
-                            <circle cx="0" cy="0" r="4" fill="#d9a441"/>
-                            <circle cx="0" cy="0" r="1.8" fill="#ffffff"/>
+                            <circle cx="0" cy="0" r="4" fill="#d9a441" />
+                            <circle cx="0" cy="0" r="1.8" fill="#ffffff" />
                         </g>
                     </g>
 
                     <!-- Center Emblem: Hex Shield with < P > -->
                     <g class="pl-core" id="plCore" filter="url(#plGlow)">
-                        <polygon points="90,64 114,78 114,102 90,116 66,102 66,78" fill="rgba(6, 32, 22, 0.88)" stroke="var(--jade)" stroke-width="1.6"/>
+                        <polygon points="90,64 114,78 114,102 90,116 66,102 66,78" fill="rgba(6, 32, 22, 0.88)"
+                            stroke="var(--jade)" stroke-width="1.6" />
                         <!-- < P > Symbol -->
-                        <path d="M 77 86 L 73 90 L 77 94" stroke="var(--jade)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 86 96 L 86 84 L 92 84 C 95 84 96 86 96 88 C 96 90 95 92 92 92 L 86 92" stroke="var(--bronze)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        <path d="M 103 86 L 107 90 L 103 94" stroke="var(--jade)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 77 86 L 73 90 L 77 94" stroke="var(--jade)" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M 86 96 L 86 84 L 92 84 C 95 84 96 86 96 88 C 96 90 95 92 92 92 L 86 92"
+                            stroke="var(--bronze)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                            fill="none" />
+                        <path d="M 103 86 L 107 90 L 103 94" stroke="var(--jade)" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" />
                     </g>
                 </svg>
             </div>
@@ -445,7 +456,8 @@
                                 <div class="radar-sweep"></div>
                                 <b class="blip b1"></b><b class="blip b2"></b><b class="blip b3"></b><b
                                     class="blip b4"></b>
-                                <div class="radar-core"><i class="ri-shield-check-line"></i></div>
+                                <div class="radar-core"><img src="img/aegism_logo.png" alt="AegisM Logo"
+                                        style="width: 100%; height: auto; object-fit: contain;"></div>
                             </div>
                         </div>
                     </article>
