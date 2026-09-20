@@ -27,7 +27,7 @@
        Helpers
        ------------------------------------------------------ */
     function splitChars(el) {
-        const text = el.textContent.trim().normalize('NFC');
+        const text = el.textContent.trim().replace(/\s+/g, ' ').normalize('NFC');
         el.setAttribute('aria-label', text);
         el.textContent = '';
         const chars = [];
@@ -53,7 +53,7 @@
     }
 
     function splitWords(el) {
-        const text = el.textContent.trim().normalize('NFC');
+        const text = el.textContent.trim().replace(/\s+/g, ' ').normalize('NFC');
         el.setAttribute('aria-label', text);
         el.textContent = '';
         const spans = [];
